@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!--It is a good convention to call your starter’s artifactId {company}-spring-boot-starter-->
+    <groupId>com.vesalukkarila</groupId>
+    <artifactId>vesalukkarila-spring-boot-starter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.1.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--The spring-boot-autoconfigure dependency is needed and pulls in any relevant Spring Boot
+    dependencies to write your own @AutoConfigurations. You can leave out the version, as you are
+    importing the spring-boot-dependencies project-->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <!--vibur-dbcp is the dependency to the vibur connection pool.
+        Spring’s dependency management doesn’t know it, hence you need to specify its version here.
+        You put the scope to <optional> because you want to let the end-user decide if he wants
+        to use Vibur or not. Think: classpath conditions.-->
+        <dependency>
+            <groupId>org.vibur</groupId>
+            <artifactId>vibur-dbcp</artifactId>
+            <version>25.0</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>
