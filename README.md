@@ -3,7 +3,7 @@ This repository is related to module 7 in Marco Behler's course "The confident S
 The course starts with plain Java backend and introduces plain Spring features little by little, showcasing what Spring Boot hides under the hood. At the end of the course Spring Boot features are implemented.  
 
 ## Learning goals
-Short but intensive module. To be revisited later. 
+Unable to get this module's outcome to work as intentend, have sent email to author. To be revisited later. 
 - AutoConfigurations
 - Inspecting Spring Boot's original source code.
 - Building own AutoConfiguration to understand how AutoConfiguration works.
